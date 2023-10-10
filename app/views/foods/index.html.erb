@@ -1,0 +1,29 @@
+
+<div class= "food-container">
+<h1>food list</h1>
+<button><%= link_to "Add Food", new_food_path %></button>
+    <div className="mission-container">
+      <table>
+        <thead className="header">
+          <th>Food</th>
+          <th>Measurement unit</th>
+          <th>Unit Price</th>
+          <th>Action</th>
+        </thead>
+<%@foods.each do |food|%>
+ <tr
+      className="comp-row"
+    >
+      <th className="name"><%=food.name%></th>
+      <th><p className="para"><%=food.measurment_unit%></p></th>
+          <th><%=food.price%></th>
+          <th><%=food.quantity%></th>
+          <th><%=button_to "Delete", food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%></th>
+          
+
+    </tr>
+
+<%end%>
+      </table>
+    </div>
+</div>
