@@ -1,0 +1,24 @@
+<h1>new</h1>
+
+<%= form_with model: @food do |form|%>
+<% if form.object.errors.any? %>
+    <div>
+        <%form.object.errors.full_messages.each do |message|%>
+        <div><%= message %></div>
+        <% end %>
+    </div>
+<% end %>
+
+<div>
+<%= form.label :name%>
+<%= form.text_field :name%>
+<%= form.label :measurment_unit%>
+<%= form.text_field :measurment_unit%>
+<%= form.label :price%>
+<%= form.text_field :price%>
+<%= form.label :quantity%>
+<%= form.text_field :quantity%>
+</div>
+
+<%= form.button%>
+<%end%>
