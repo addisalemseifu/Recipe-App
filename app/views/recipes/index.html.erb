@@ -1,14 +1,17 @@
 <div class="receipe-container">
 <h1> details</h1>
+<button><%= link_to "Add Recipe", new_recipe_path %></button>
     <div class="receipe-wrapper">
-        <%@recipe.each do |receipe|%>
+        <%@recipe.each do |recipe|%>
           <article>
                 <div>
-                    <span><%=receipe.name%></span>
-                    <span><%= link_to "Remove", receipe_path %></span>
+                    <span><%= link_to recipe.name, recipe_path(recipe.id) %></span>
+                    <%if can? :destroy, recipe%>
+                    <span><%=button_to "Remove", recipe, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%></span>
+                    <%end%>
                 </div>
                 <div>
-                    <span><%=receipe.description%></span>
+                    <span><%=recipe.description%></span>
                 </div>
             </article>
         <%end%>

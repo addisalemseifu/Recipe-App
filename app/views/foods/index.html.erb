@@ -18,8 +18,9 @@
       <th><p className="para"><%=food.measurment_unit%></p></th>
           <th><%=food.price%></th>
           <th><%=food.quantity%></th>
+          <%if can? :destroy, food%>
           <th><%=button_to "Delete", food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%></th>
-          
+          <%end%>
 
     </tr>
 

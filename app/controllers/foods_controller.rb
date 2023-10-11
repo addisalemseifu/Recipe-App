@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  # load_and_authorize_resource
   before_action :authenticate_user!
   before_action :set_food, except: %i[index new create]
   def index

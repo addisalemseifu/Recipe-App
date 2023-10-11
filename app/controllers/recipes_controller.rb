@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_recipe, except: %i[index new create]
   def index
     @recipe = Recipe.all
@@ -19,6 +20,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path
+  end
+
   def destroy
     @recipe.destroy
     redirect_to @recipe
@@ -35,17 +41,4 @@ class RecipesController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to @recipe
   end
-
-  # def index
-  #     @recipe = Recipe.all
-  # end
-
-  # def show
-  #     @recipe = Recipe.find(params[:id])
-  #     @food = Food.find(params[:id])
-  # end
-
-  # def create
-
-  # end
 end
