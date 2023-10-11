@@ -42,13 +42,4 @@ class RecipesController < ApplicationController
     redirect_to @recipe
   end
 
-  # def index
-  #     @recipe = Recipe.all
-  # end
-
-
-
-  # def create
-
-  # end
 end
