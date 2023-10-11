@@ -1,4 +1,5 @@
 class FoodsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_food, except: %i[index new create]
   def index
     @foods = Food.all
@@ -10,8 +11,9 @@ class FoodsController < ApplicationController
 
   def create
     @food = Food.new(food_params)
+    @food.user = current_user
     if @food.save
-      redirect_to @food
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
