@@ -41,5 +41,4 @@ class RecipesController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to @recipe
   end
-
 end
