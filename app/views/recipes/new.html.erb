@@ -1,5 +1,5 @@
 <h1>new</h1>
-<%= form_with model: @receipe do |form|%>
+<%= form_with model: @recipe do |form|%>
 <div>
     <%= form.label :name%>
     <%= form.text_field :name%>
@@ -10,7 +10,7 @@
     <%= form.label :cooking_time%>
     <%= form.text_field :cooking_time%>
 
-    <%= form.label :descriptiony%>
+    <%= form.label :description%>
     <%= form.text_field :description%>
 
       <%= form.label :public%>

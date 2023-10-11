@@ -72,5 +72,8 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-
+# Autentication
 gem 'devise', '~> 4.9'
+
+# Authorization
+gem 'cancancan'
