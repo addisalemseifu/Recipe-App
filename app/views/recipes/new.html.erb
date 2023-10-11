@@ -1,0 +1,20 @@
+<h1>new</h1>
+<%= form_with model: @receipe do |form|%>
+<div>
+    <%= form.label :name%>
+    <%= form.text_field :name%>
+
+    <%= form.label :preparation_time%>
+    <%= form.text_field :preparation_time%>
+
+    <%= form.label :cooking_time%>
+    <%= form.text_field :cooking_time%>
+
+    <%= form.label :descriptiony%>
+    <%= form.text_field :description%>
+
+      <%= form.label :public%>
+    <%= form.text_field :public%>
+</div>
+<%= form.button%>
+<%end%>

@@ -1,0 +1,16 @@
+<div class="receipe-container">
+<h1> details</h1>
+    <div class="receipe-wrapper">
+        <%@recipe.each do |receipe|%>
+          <article>
+                <div>
+                    <span><%=receipe.name%></span>
+                    <span><%= link_to "Remove", receipe_path %></span>
+                </div>
+                <div>
+                    <span><%=receipe.description%></span>
+                </div>
+            </article>
+        <%end%>
+    </div>
+</div>
