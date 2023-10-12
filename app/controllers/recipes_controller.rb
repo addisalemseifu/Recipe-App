@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe_foods = @recipe.recipe_foods
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path
   end
