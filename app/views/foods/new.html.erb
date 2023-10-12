@@ -1,4 +1,5 @@
-<h1>new</h1>
+<div class="new-food-container">
+<h1>Add food</h1>
 
 <%= form_with model: @food do |form|%>
 <% if form.object.errors.any? %>
@@ -9,7 +10,7 @@
     </div>
 <% end %>
 
-<div>
+<div class="food-form">
 <%= form.label :name%>
 <%= form.text_field :name%>
 <%= form.label :measurment_unit%>
@@ -22,3 +23,5 @@
 
 <%= form.button%>
 <%end%>
+
+</div>

@@ -1,47 +1,50 @@
-<div class= "receipe-container">
-    <div class="receipe-wrapper">
-        
-       <div>
-            <h1><%=@recipe.name%></h1>
+<div class= "receipe-detail-container">
+    <h1 class="recipe-name"><%=@recipe.name%></h1>
+    <div class="details-wrapper">
+            
 
-            <div>
-                <div>Preparation time<%=@recipe.preparation_time%></div>
-                <div>Cooking time <%=@recipe.cooking_time%></div>
-                <div>steps go here....</div>
-
-                <div>General shopping list</div>
+            <div class="details-wrapper-left">
+                <h4>Preparation time: <%=@recipe.preparation_time%></h4>
+                <h4>Cooking time:  <%=@recipe.cooking_time%></h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptates dicta similique ab soluta totam inventore ratione, perferendis facilis facere maiores. Modi impedit aperiam dolores tempora eligendi odit et repellendus</p>
             </div>
 
-            <div>
-                <div>Public<div>
-                <div> Add Ingredient <div>
+            <div class="details-wrapper-right">
+             Public
+            
+            
             </div>
-           <%= button_to "Generate Shopping list", general_shopping_lists_path, method: :get, class: 'shopping-list-btn' %>
+          
+    </div>
+    <div class="generate-button-wrapper">
+             <%= button_to "Generate Shopping list", general_shopping_lists_path, method: :get, class: 'shopping-list-btn' %>
 
             
             <button><%= link_to "Add Recipe Food", "/recipes/#{@recipe.id}/recipe_foods/new" %></button>
-       </div>
-    </div>
-    <div class= "food-container">
-
-
-<h1>food Ingridient list</h1>
-    <div className="mission-container">
+            
+            
+            </div>
+            <h3>food Ingridient list</h3>
+ <div class="mission-container">
       <table>
-        <thead className="header">
+        <thead class="header">
           <th>Food</th>
           <th>Quantity</th>
           <th>Value</th>
           <th>Actions</th>
         </thead>
-<%@recipe_foods.each do |food|%>
+<%@recipe_foods.each do |recipe_food|%>
  <tr
-      className="comp-row"
+      class="comp-row"
     >
-      <th className="name">Food Name</th>
-      <th><p className="para"><%=food.quantity%></p></th>
-          <th>value</th>
-          <th>actions</th>
+      <td class="name"><%=recipe_food.food.name%></td>
+      <td><p class="para"><%=recipe_food.quantity%></p></td>
+          <td><%=recipe_food.quantity*recipe_food.food.price%></td>
+          <td>
+          <%if can? :destroy, recipe_food%><%=button_to "Remove", recipe_food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%><%end%>
+          </td>
+          <%if can? :update, recipe_food%><%=button_to "Modify", recipe_food, method: :patch%><%end%>
+          </td>
          
 
     </tr>
@@ -49,5 +52,7 @@
 <%end%>
       </table>
     </div>
-</div>
+
+
+    
 </div>
