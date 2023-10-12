@@ -145,7 +145,13 @@ Food/index
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid red;
+}
+
+.add-food-btn {
+  margin-left: auto;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+  padding: 0.2rem;
 }
 
 .mission-container {
@@ -156,7 +162,7 @@ Food/index
 }
 
 .mission-container table {
-  border: solid 0.5px #fdeeee;
+  border: solid 0.5px #e3d2d2;
   border-spacing: 0;
 }
 
@@ -166,7 +172,7 @@ Food/index
   padding: 4px;
 }
 
-.comp-row th {
+.comp-row td {
   border-top: solid 0.5px #e3d2d2;
   border-left: solid 0.5px #e3d2d2;
   margin: 0;
@@ -241,136 +247,108 @@ Food/index
 
 /*
 ===============
-Users List Page
+Food/new
 ===============
 */
-.user-container {
+.new-food-container {
   display: flex;
   flex-direction: column;
-  margin: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.user-wrapper {
-  border: 1px solid #b3d8f4;
+.food-form {
   display: flex;
-  flex-direction: row;
-  margin-bottom: 2rem;
-  border-radius: 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.user-wrapper img {
-  width: 8rem;
-  height: 8rem;
-  margin-right: 3rem;
-}
-
-.user-details {
+/*
+===============
+Recipe/Index
+===============
+*/
+.receipe-container {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding-right: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.user-details h2 {
-  align-self: center;
-}
-
-.user-details h5 {
-  align-self: flex-end;
+.add-recipe {
+  padding: 0.2rem;
   margin-left: auto;
+  margin-bottom: 1rem;
+  margin-right: 7rem;
 }
 
-/*
-===============
-User Detail Page
-===============
-*/
-
-.bio-wrapper {
-  border: 1px solid #b3d8f4;
+.receipe {
   display: flex;
-  flex-direction: column;
+  border: 2px solid rgb(142, 123, 123);
+  justify-content: space-between;
+  width: 30rem;
   margin-bottom: 2rem;
-  border-radius: 4px;
   padding: 1rem;
 }
 
-/*
-===============
-All Posts For a Particular User Page
-===============
-*/
-
-.user-container button {
-  align-self: center;
-  border: 1px solid #719aba;
-  width: fit-content;
-  padding: 0.5rem;
-  border-radius: 2px;
-}
-
-.post-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  border-radius: 4px;
-}
-
-.post-wrapper {
-  border: 1px solid #b3d8f4;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  border-radius: 4px;
-  padding: 1rem;
-}
-
-.post-wrapper h5 {
-  align-self: end;
-}
-
-.comment-wrapper {
-  border: 1px solid #b3d8f4;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
-  border-radius: 4px;
-  padding: 1rem;
-}
-
-.btn-wrapper {
-  border: 1px solid #b3d8f4;
-  display: flex;
-  flex-direction: row;
-  border-radius: 2px;
-  padding: 1rem;
-}
-
-/*
-===============
-Sign-Up Page
-===============
-*/
-
-.sign-up {
-  position: relative;
-  right: 2rem;
-  margin-bottom: 2rem;
-}
-
-/*
-===============
-Sign-In Page
-===============
-*/
-
-.form-container {
+.left-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
-.sign-in {
-  margin-bottom: 2rem;
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+===============
+Recipe/Show
+===============
+*/
+.receipe-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+}
+
+.recipe-name {
+  display: flex;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.details-wrapper-left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.details-wrapper-right {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.generate-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.generate-button-wrapper button {
+  padding: 0.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

@@ -1,6 +1,14 @@
-<h1>new</h1>
+<div class="new-food-container">
+<h1>Add recipe</h1>
 <%= form_with model: @recipe do |form|%>
-<div>
+<% if form.object.errors.any? %>
+    <div>
+        <%form.object.errors.full_messages.each do |message|%>
+        <div><%= message %></div>
+        <% end %>
+    </div>
+<% end %>
+<div class="food-form">
     <%= form.label :name%>
     <%= form.text_field :name%>
 
@@ -18,3 +26,5 @@
 </div>
 <%= form.button%>
 <%end%>
+
+</div>
