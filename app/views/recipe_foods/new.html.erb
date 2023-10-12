@@ -1,0 +1,16 @@
+<h1>new</h1>
+<%= form_with model: @recipe_food, url: "/recipes/#{params[:recipe_id]}/recipe_foods", local: true  do |form|%>
+<div class="field">
+      <%= form.label :food_id, "Food Item", style: "display: block" %>
+      <%= form.collection_select(:food_id, Food.where(user_id: current_user), :id, :name) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :quantity, style: "display: block" %>
+      <%= form.number_field :quantity %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Add Food Item" %>
+    </div>
+<%end%>

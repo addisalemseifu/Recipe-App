@@ -16,6 +16,38 @@
                 <div>Public<div>
                 <div> Add Ingredient <div>
             </div>
+           <%= button_to "Generate Shopping list", general_shopping_lists_path, method: :get, class: 'shopping-list-btn' %>
+
+            
+            <button><%= link_to "Add Recipe Food", "/recipes/#{@recipe.id}/recipe_foods/new" %></button>
        </div>
     </div>
+    <div class= "food-container">
+
+
+<h1>food Ingridient list</h1>
+    <div className="mission-container">
+      <table>
+        <thead className="header">
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </thead>
+<%@recipe_foods.each do |food|%>
+ <tr
+      className="comp-row"
+    >
+      <th className="name">Food Name</th>
+      <th><p className="para"><%=food.quantity%></p></th>
+          <th>value</th>
+          <th>actions</th>
+         
+
+    </tr>
+
+<%end%>
+      </table>
+    </div>
+</div>
 </div>
