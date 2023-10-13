@@ -73,6 +73,15 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+
+gem 'device'
+gem 'factory_bot_rails'
+gem 'faker'
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem 'image_processing', '~> 1.2'
+
+gem 'rails-controller-testing'
+
 # Autentication
 gem 'devise', '~> 4.9'
 
