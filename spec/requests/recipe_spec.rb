@@ -9,7 +9,6 @@ RSpec.describe '/recipes', type: :request do
       end
 
       after do
-        # Remove associated recipes before destroying the user
         Recipe.where(user: @user).destroy_all if @user.recipes.any?
         @user.destroy
       end
