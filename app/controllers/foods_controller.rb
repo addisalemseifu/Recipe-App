@@ -3,7 +3,7 @@ class FoodsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_food, except: %i[index new create]
   def index
-    @foods = current_user.foods
+    @foods = Food.all
   end
 
   def new
