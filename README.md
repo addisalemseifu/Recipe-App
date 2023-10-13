@@ -158,10 +158,11 @@ To run tests, run the following command:
 - Twitter: [@teitonny](https://twitter.com/teitonny)
 - LinkedIn: [@tonnytei](https://www.linkedin.com/in/tonnytei)
 
-👤 **Addisalem Seifu Beidework**
+👤 **addisalem**
 
 - GitHub: [@addisalemseifu](https://github.com/addisalemseifu)
-- Twitter: [beidework](https://twitter.com/beidework)
+- Twitter: [@Addisalem Seifu](https://twitter.com/beidework)
+- LinkedIn: [addisalem seifu](https://www.linkedin.com/in/addisalemseifu/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
