@@ -20,7 +20,7 @@
           
           <td class= "button-holder">
           <%if can? :destroy, food%><%=button_to "Delete", food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%><%end%>
-          |  <%if can? :update, food%><button> <%= link_to "Edit",  "/foods/#{food.id}/edit" %></button><%end%> </th>
+          <%if can? :update, food%>|   <button> <%= link_to "Edit",  "/foods/#{food.id}/edit" %></button><%end%> </th>
           
 
     </tr>
