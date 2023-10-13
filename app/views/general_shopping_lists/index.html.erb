@@ -1,41 +1,30 @@
-<div class="container">
- <div class="row mb-5 text-center">
-    <div class="col-md-12">
+<div class="food-container">
       <h1>Shopping List</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 fw-bold fs-5">
+
       <p>
         Amount of food items to buy: <%= @food_lists.to_ary.count %>
       </p>
-    </div>
-    <div class="col-md-6 text-end fw-bold fs-5">
       <p>
         Total value of food needed: $<%= @total_price %>
       </p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <table class="table">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">Food</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-          </tr>
+
+    <div class="mission-container">
+      <table>
+        <thead class="header">
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
         </thead>
-        <tbody>
-          <% @food_lists.each do |item| %>
+ <% @food_lists.each do |item| %>
             <tr>
               <td><%= item[:name] %></td>
               <td><%= item[:total_quantity] %><%= item[:measurment_unit] %></td>
               <td>$<%= item[:price] %></td>
             </tr>
           <% end %>
-        </tbody>
       </table>
     </div>
-  </div>
 </div>
+
+
+

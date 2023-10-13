@@ -15,12 +15,13 @@ class Ability
       can :destroy, Recipe do |recipe|
         recipe.user == user
       end
+      can :update, RecipeFood do |rf|
+        rf.recipe.user == user
+      end
       can :destroy, RecipeFood do |recipe_food|
         recipe_food.recipe.user == user
       end
-      can :update, RecipeFood do |recipe_food|
-        recipe_food.recipe.user == user
-      end
+
 
       can :create, Food
       can :create, Recipe

@@ -134,6 +134,62 @@ p {
   background: var(--clr-primary-light);
 }
 
+
+
+/*
+===============
+Registration
+===============
+*/
+.register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+
+nav {
+  height: 6rem;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border: solid 1px #e8e8e8;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+nav img {
+  width: 5rem;
+  color: black;
+  fill: black;
+  border-radius: 4px;
+}
+
+.nav-center {
+  max-width: var(--fixed-width);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active {
+  color: var(--clr-blue);
+  text-decoration: underline !important;
+}
+
+.user-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*
 ===============
 Food/index
@@ -159,28 +215,34 @@ Food/index
   margin-right: 2rem;
   margin-top: 2rem;
   padding: 0;
+  width: 100vw;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .mission-container table {
   border: solid 0.5px #e3d2d2;
   border-spacing: 0;
+  width: 100%;
+}
+
+.comp-row td {
+  border-top: solid 0.5px #e3d2d2;
+  border-left: solid 0.5px #e3d2d2;
+  text-align: start;
+  margin-bottom: auto;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.mission-container table td {
+  border: solid 0.5px #e3d2d2;
 }
 
 .header th {
   border: solid 0.5px #e3d2d2;
   text-align: start;
   padding: 4px;
-}
-
-.comp-row td {
-  border-top: solid 0.5px #e3d2d2;
-  border-left: solid 0.5px #e3d2d2;
-  margin: 0;
-  margin-block: 0;
-  text-align: start;
-  margin-bottom: auto;
-  padding-left: 3px;
-  padding-right: 3px;
 }
 
 .mission-container table tr:nth-child(odd) {
@@ -277,13 +339,6 @@ Recipe/Index
   justify-content: center;
 }
 
-.add-recipe {
-  padding: 0.2rem;
-  margin-left: auto;
-  margin-bottom: 1rem;
-  margin-right: 7rem;
-}
-
 .receipe {
   display: flex;
   border: 2px solid rgb(142, 123, 123);
@@ -303,6 +358,15 @@ Recipe/Index
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.button-holder2 {
+  display: flex;
+}
+
+.button-holder2 button {
+  width: 5rem;
+  height: 2rem;
 }
 
 /*
@@ -351,4 +415,52 @@ Recipe/Show
   padding: 0.2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.button-holder {
+  display: flex;
+}
+
+.button-holder button {
+  width: 5rem;
+}
+
+/*
+===============
+Public/Index
+===============
+*/
+.public-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-recipe {
+  padding: 0.2rem;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  margin-right: 7rem;
+}
+
+.public-wrapper {
+  display: flex;
+  border: 2px solid rgb(142, 123, 123);
+  justify-content: space-between;
+  width: 30rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.public-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.public-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

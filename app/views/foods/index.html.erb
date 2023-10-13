@@ -1,4 +1,5 @@
 <div class= "food-container">
+ 
 <h1>food list</h1>
 <button class="add-food-btn"><%= link_to "Add Food", new_food_path %></button>
     <div class="mission-container">
@@ -17,7 +18,9 @@
       <td><p class="para"><%=food.measurment_unit%></p></td>
           <td><%="$ #{food.price}"%></td>
           
-          <td><%if can? :destroy, food%><%=button_to "Delete", food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%><%end%></th>
+          <td class= "button-holder">
+          <%if can? :destroy, food%><%=button_to "Delete", food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%><%end%>
+          |  <%if can? :update, food%><button> <%= link_to "Edit",  "/foods/#{food.id}/edit" %></button><%end%> </th>
           
 
     </tr>
