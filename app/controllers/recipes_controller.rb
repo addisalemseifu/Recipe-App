@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show toggle]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_recipe, except: %i[index new create]
   def index
     @recipe = Recipe.all
