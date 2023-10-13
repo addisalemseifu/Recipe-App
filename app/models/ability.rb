@@ -22,7 +22,6 @@ class Ability
         recipe_food.recipe.user == user
       end
 
-
       can :create, Food
       can :create, Recipe
       can :create, RecipeFood

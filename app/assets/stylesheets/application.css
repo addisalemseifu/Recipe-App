@@ -134,13 +134,12 @@ p {
   background: var(--clr-primary-light);
 }
 
-
-
 /*
 ===============
 Registration
 ===============
 */
+
 .register {
   display: flex;
   flex-direction: column;
