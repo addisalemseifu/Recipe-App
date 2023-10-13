@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe '/recipes', type: :request do
-    include Devise::Test::IntegrationHelpers
+  include Devise::Test::IntegrationHelpers
 
-    before :each do
-        @user = User.create(name: "Tonny", email: 'tonnytei4@example.com', password: 'Danger123', password_confirmation: "Danger123")
-        sign_in @user
-      end
+  before :each do
+    @user = User.create(name: 'Tonny', email: 'tonnytei4@example.com', password: 'Danger123',
+                        password_confirmation: 'Danger123')
+    sign_in @user
+  end
 
-      after do
-        Recipe.where(user: @user).destroy_all if @user.recipes.any?
-        @user.destroy
-      end
+  after do
+    Recipe.where(user: @user).destroy_all if @user.recipes.any?
+    @user.destroy
+  end
 
   let(:valid_attributes) do
-    { name: 'Recip1', preparation_time: 10, description: 'Ree1', cooking_time: 10, public: true, user: @user}
+    { name: 'Recip1', preparation_time: 10, description: 'Ree1', cooking_time: 10, public: true, user: @user }
   end
 
   let(:invalid_attributes) do

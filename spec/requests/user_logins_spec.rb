@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "UserLogins", type: :request do
-  include Devise::Test::IntegrationHelpers 
+RSpec.describe 'UserLogins', type: :request do
+  include Devise::Test::IntegrationHelpers
   before :each do
-    @user = User.create(name: "User", email: 'user@example.com', password: 'password123', password_confirmation: "password123")
+    @user = User.create(name: 'User', email: 'user@example.com', password: 'password123',
+                        password_confirmation: 'password123')
   end
 
   it 'allows a registered user to log in' do
-    sign_in @user 
+    sign_in @user
     get root_path
     expect(response).to be_successful
   end

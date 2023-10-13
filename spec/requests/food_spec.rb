@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe '/foods', type: :request do
-    include Devise::Test::IntegrationHelpers
+  include Devise::Test::IntegrationHelpers
   before(:each) do
-    @user = User.create(name: "Tonny", email: 'tonnytei4@example.com', password: 'Danger123', password_confirmation: "Danger123")
+    @user = User.create(name: 'Tonny', email: 'tonnytei4@example.com', password: 'Danger123',
+                        password_confirmation: 'Danger123')
     sign_in @user
   end
   let(:valid_attributes) do
-    { name: 'Example Food', measurment_unit: 5, price: 10,  quantity: 4 }
+    { name: 'Example Food', measurment_unit: 5, price: 10, quantity: 4 }
   end
 
   let(:invalid_attributes) do
-    { name: nil, measurment_unit: 10, price: '210', quantity: 4}
+    { name: nil, measurment_unit: 10, price: '210', quantity: 4 }
   end
 
   describe 'GET /index' do
@@ -41,17 +42,17 @@ RSpec.describe '/foods', type: :request do
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
-    end
+  end
 
-    describe 'DELETE /destroy' do
-        it 'destroys a food record and redirects to root_path' do
-            food = Food.create! valid_attributes.merge(user: @user)
-    
-          expect {
-            delete food_path(food)
-          }.to change(Food, :count).by(-1)
-    
-          expect(response).to redirect_to(root_path)
-        end
-      end
+  describe 'DELETE /destroy' do
+    it 'destroys a food record and redirects to root_path' do
+      food = Food.create! valid_attributes.merge(user: @user)
+
+      expect do
+        delete food_path(food)
+      end.to change(Food, :count).by(-1)
+
+      expect(response).to redirect_to(root_path)
+    end
+  end
 end
