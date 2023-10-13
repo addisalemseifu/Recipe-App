@@ -10,7 +10,16 @@
             </div>
 
             <div class="details-wrapper-right">
-             Public
+          <%= form_for @recipe do |f| %>
+  <div class="form-group">
+    <%= f.label :public %>
+    <%= f.check_box :public, { checked: @recipe.public }, true, false %>
+  </div>
+  <%= f.submit %>
+<% end %>
+  
+</label>
+
             
             
             </div>
@@ -40,10 +49,11 @@
       <td class="name"><%=recipe_food.food.name%></td>
       <td><p class="para"><%=recipe_food.quantity%></p></td>
           <td><%=recipe_food.quantity*recipe_food.food.price%></td>
-          <td>
-          <%if can? :destroy, recipe_food%><%=button_to "Remove", recipe_food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%><%end%>
+          <td class= "button-holder">
+          <button> <%= link_to "Edit",  "/recipes/#{@recipe.id}/recipe_foods/#{recipe_food.id}/edit" %></button> |
+          <%=button_to "Remove", "/recipes/#{@recipe.id}/recipe_foods/#{recipe_food.id}", method: :delete,data: {turbo_confirm: "Are you shure mate?"}%>
           </td>
-          <%if can? :update, recipe_food%><%=button_to "Modify", recipe_food, method: :patch%><%end%>
+         
           </td>
          
 

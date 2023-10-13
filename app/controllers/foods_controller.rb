@@ -10,6 +10,19 @@ class FoodsController < ApplicationController
     @food = Food.new
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    @food.update(food_params)
+    if @food.update(food_params)
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def create
     @food = Food.new(food_params)
     @food.user = current_user
