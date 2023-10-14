@@ -1,0 +1,30 @@
+<div class="food-container">
+      <h1>Shopping List</h1>
+
+      <p>
+        Amount of food items to buy: <%= @food_lists.to_ary.count %>
+      </p>
+      <p>
+        Total value of food needed: $<%= @total_price %>
+      </p>
+
+    <div class="mission-container">
+      <table>
+        <thead class="header">
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </thead>
+ <% @food_lists.each do |item| %>
+            <tr>
+              <td><%= item[:name] %></td>
+              <td><%= item[:total_quantity] %><%= item[:measurment_unit] %></td>
+              <td>$<%= item[:price] %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+</div>
+
+
+

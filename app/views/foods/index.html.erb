@@ -1,0 +1,31 @@
+<div class= "food-container">
+ 
+<h1>food list</h1>
+<button class="add-food-btn"><%= link_to "Add Food", new_food_path %></button>
+    <div class="mission-container">
+      <table>
+        <thead class="header">
+          <th>Food</th>
+          <th>Measurement unit</th>
+          <th>Unit Price</th>
+          <th>Action</th>
+        </thead>
+<%@foods.each do |food|%>
+ <tr
+      class="comp-row"
+    >
+      <td class="name"><%=food.name%></td>
+      <td><p class="para"><%=food.measurment_unit%></p></td>
+          <td><%="$ #{food.price}"%></td>
+          
+          <td class= "button-holder">
+          <%if can? :destroy, food%><%=button_to "Delete", food, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%><%end%>
+          <%if can? :update, food%>|   <button> <%= link_to "Edit",  "/foods/#{food.id}/edit" %></button><%end%> </th>
+          
+
+    </tr>
+
+<%end%>
+      </table>
+    </div>
+</div>

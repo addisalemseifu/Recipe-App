@@ -1,0 +1,25 @@
+<div class="receipe-container">
+<h1>Recipe List</h1>
+<button class= "add-recipe"><%= link_to "Add Recipe", new_recipe_path %></button>
+    <div class="receipe-wrapper">
+        <%@recipe.each do |recipe|%>
+          <article class="receipe">
+                <div class="left-box">
+                <%if can? :destroy, recipe%>
+                    <h4><%= link_to recipe.name, recipe_path(recipe.id) %></h4>
+                    <%else%>
+                    <h4><%= recipe.name%></h4>
+                    <%end%>
+                    <div class= "button-holder2">
+                    <%if can? :destroy, recipe%>
+                    <%=button_to "Remove", recipe, method: :delete,data: {turbo_confirm: "Are you shure mate?"}%>
+                    <%end%>
+                    <%if can? :update, recipe%>|<button> <%= link_to "Edit",  "/recipes/#{recipe.id}/edit" %></button><%end%></div>
+                </div>
+                <div class= "right-box">
+                    <span><%=recipe.description%></span>
+                </div>
+            </article>
+        <%end%>
+    </div>
+</div>

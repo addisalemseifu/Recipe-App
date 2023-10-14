@@ -1,0 +1,30 @@
+<div class="new-food-container">
+<h1>Add recipe</h1>
+<%= form_with model: @recipe do |form|%>
+<% if form.object.errors.any? %>
+    <div>
+        <%form.object.errors.full_messages.each do |message|%>
+        <div><%= message %></div>
+        <% end %>
+    </div>
+<% end %>
+<div class="food-form">
+    <%= form.label :name%>
+    <%= form.text_field :name%>
+
+    <%= form.label :preparation_time%>
+    <%= form.text_field :preparation_time%>
+
+    <%= form.label :cooking_time%>
+    <%= form.text_field :cooking_time%>
+
+    <%= form.label :description%>
+    <%= form.text_field :description%>
+
+      <%= form.label :public%>
+    <%= form.text_field :public%>
+</div>
+<%= form.button%>
+<%end%>
+
+</div>

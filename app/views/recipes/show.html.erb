@@ -1,0 +1,68 @@
+<div class= "receipe-detail-container">
+    <h1 class="recipe-name"><%=@recipe.name%></h1>
+    <div class="details-wrapper">
+            
+
+            <div class="details-wrapper-left">
+                <h4>Preparation time: <%=@recipe.preparation_time%></h4>
+                <h4>Cooking time:  <%=@recipe.cooking_time%></h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur voluptates dicta similique ab soluta totam inventore ratione, perferendis facilis facere maiores. Modi impedit aperiam dolores tempora eligendi odit et repellendus</p>
+            </div>
+
+            <div class="details-wrapper-right">
+          <%= form_for @recipe do |f| %>
+  <div class="form-group">
+    <%= f.label :public %>
+    <%= f.check_box :public, { checked: @recipe.public }, true, false %>
+  </div>
+  <%= f.submit %>
+<% end %>
+  
+</label>
+
+            
+            
+            </div>
+          
+    </div>
+    <div class="generate-button-wrapper">
+             <%= button_to "Generate Shopping list", general_shopping_lists_path, method: :get, class: 'shopping-list-btn' %>
+
+            
+            <button><%= link_to "Add Recipe Food", "/recipes/#{@recipe.id}/recipe_foods/new" %></button>
+            
+            
+            </div>
+            <h3>food Ingridient list</h3>
+ <div class="mission-container">
+      <table>
+        <thead class="header">
+          <th>Food</th>
+          <th>Quantity</th>
+          <th>Value</th>
+          <th>Actions</th>
+        </thead>
+<%@recipe_foods.each do |recipe_food|%>
+ <tr
+      class="comp-row"
+    >
+      <td class="name"><%=recipe_food.food.name%></td>
+      <td><p class="para"><%=recipe_food.quantity%></p></td>
+          <td><%=recipe_food.quantity*recipe_food.food.price%></td>
+          <td class= "button-holder">
+          <button> <%= link_to "Edit",  "/recipes/#{@recipe.id}/recipe_foods/#{recipe_food.id}/edit" %></button> |
+          <%=button_to "Remove", "/recipes/#{@recipe.id}/recipe_foods/#{recipe_food.id}", method: :delete,data: {turbo_confirm: "Are you shure mate?"}%>
+          </td>
+         
+          </td>
+         
+
+    </tr>
+
+<%end%>
+      </table>
+    </div>
+
+
+    
+</div>
